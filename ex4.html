@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<h1> Exercício 4 </h1>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		var vetor = [];
+		var i;
+		var posicao;
+		function ex4(){
+			for(i = 0; i<15; i++){
+				vetor[i] = parseInt(prompt("Informe um valor: " ));
+			}
+			for( i=0; i<15;i++){
+				if (vetor[i] == 30){
+						alert("Posições: " + i);
+			}
+			}
+		}
+	</script>
+</head>
+<body>
+	<p>
+		<button onclick="ex4()">Calcular </button>
+	</p>
+</body>
+</html>

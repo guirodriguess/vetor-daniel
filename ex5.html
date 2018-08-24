@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<h1> Exercício 5 </h1>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//Variáveis
+		var vet=[];
+		var vet2=[];
+		var i;
+		function ex5(){
+			for(i=0;i<15;i++){
+				vet[i] = parseInt(prompt("Informe o número da matrícula dos alunos de Lógica:" + i));
+			}
+			for(var j=0;j<10;j++){
+				vet2[j] = parseInt(prompt("Informe o número da matrícula dos alunos de LP:" + j));
+			}
+			for (i = 0; i<15 ; i++){
+				for(j=0; j<10; j++){
+					if (vet[i] == vet2[j]){
+						alert("O aluno referente a matrícula " + vet[i] + " está matriculado nos dois cursos");
+					}		
+				}
+			}
+		}
+		
+	</script>
+
+</head>
+<body>
+	<p>
+		<button onclick="ex5()">Lógica</button>
+	</p>
+</body>
+</html>
