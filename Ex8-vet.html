@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<h1> Exercício 8 </h1>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//Variáveis
+		var nomes=[];
+		var medias=[];
+		var i;
+		function ex8(){
+			for(i=0;i<7;i++){
+				nomes.push(prompt("Nome do Aluno "));
+				medias.push(prompt("Média do Aluno "));
+			}
+			//nome da maior media
+			var maiorMedia = 0; var maiorNome;
+			for(i=0;i<7;i++){
+				if(medias[i] > maiorMedia){
+					maiorMedia = medias[i]; //atualizo a maior media
+					maiorNome = nomes[i]; //guardo o nome
+				}
+			}
+			alert("Nome da maior média " + maiorNome);
+			
+		}
+	</script>
+
+</head>
+<body>
+	<p>
+		<button onclick="ex5()">Lógica</button>
+	</p>
+</body>
+</html>
