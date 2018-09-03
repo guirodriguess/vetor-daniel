@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function inicia(){
+			var vCodigo =[]; //vetor de código.
+			var vEstoque = []; //vetor de estoque
+			for(var i = 0; i <5; i++){
+				vCodigo.push(prompt("Informe o código")); //coloca elementos no vetor.
+				vEstoque.push(prompt("Informe o estoque")); //coloca elementos no vetor.
+			}
+			//realizar compra
+			var cliente, codigo, qtde;
+			cliente = prompt("Código do cliente:");
+			while (cliente != 0){ //cliente é válido
+				codigo = prompt("Código do produto:");
+				var posicao = vCodigo.indexOf(codigo); //procura o código no vetor de códigos
+				if (posicao != -1){  //produto existe
+					qtde = prompt("Quantidade do produto:");
+					if (vEstoque[posicao] >= qtde){  //tem estoque
+						vEstoque[posicao] = vEstoque[posicao] - qtde; //atualiza estoque
+						alert("Compra realizada com sucesso!");
+					}
+					else{
+						alert("Não tem em estoque!");
+					}
+				}
+				else{
+					alert("Produto não existe!");
+				}
+			cliente = prompt("Código do novo cliente:");
+			}
+			alert(vEstoque);
+		}
+	</script>
+</head>
+<body>
+	<button onclick="inicia()">Iniciar</button>
+</body>
+</html>

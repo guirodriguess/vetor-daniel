@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript">
+		var vet=[];
+		var par=[];
+		var impar=[];
+		function vet1(){
+			for(var i=0; i< 6; i++){
+				vet.push(prompt("Informe um número"));
+			}
+			for(i=0; i <6; i++){
+				if (vet[i] % 2 == 0) {
+						par.push(vet[i]);
+					}
+					else{
+						impar.push(vet[i]);
+					}
+			}
+			alert("Quantos pares: " + par.length + " - " + par);
+			alert("Quantos ímpares: " + impar.length + " - " + impar); 
+		}
+	</script>
+
+</head>
+<body>
+	<p>
+		<button onclick="vet1()"> Exercício 1 </button>
+	</p>
+</body>
+</html>

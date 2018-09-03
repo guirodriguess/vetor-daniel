@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercício 2</title>
+	<script type="text/javascript">
+		function ex2() {
+			var vet = [];
+			var mult2=[];
+			var mult3 = [];
+			var mult23 = [];
+			for (var i = 0; i < 7; i++) {
+				vet.push(prompt(Informe um numero));
+	 		}
+	 		for(var i = 0; i < 7; i++) {
+	 			if(vet[i] % 2 == 0) && (vet[i] % 3 == 0){
+	 				mult23.push(vet[i]);
+	 			}
+	 			if (vet[i % 2 == 0]){
+	 				mult2.push(vet[i]);
+	 			}
+	 			if (vet[i % 2 == 0]){
+	 				mult3.push(vet[i]);
+	 			}
+	 		}
+	 		alert("Mult 2 e 3 " + mult23.length + " - " + mult23);
+	 		alert("Mult 2 " + mult2.length + " - " + mult2);
+	 		alert("Mult 3 " + mult3.length + " - " + mult3);
+	 	}
+	 </script>
+</head>
+<body>
+	<button onclick="ex2()"> Exercício 2</button>
+</body>
+</html>
