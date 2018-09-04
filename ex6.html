@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<h1> Exercício 6 </h1>
+	<script type="text/javascript">
+		var vet = [];
+		var com = [];
+		var nome = [];
+		var vcom = [];
+
+		function cadastro(){
+			nomeVendedor = document.getElementById("vendedor").value;
+			vendas = document.getElementById("vendas").value;
+			comissao = document.getElementById("comissao").value;
+			if (nome.indexOf(nomeVendedor) == -1) {
+				nome.push(nomeVendedor);
+				vet.push(Number(vendas));
+				com.push(Number(comissao));
+				var vendas2 = 0;
+				vendas2 = Number(vendas) + (vendas * (comissao/100));
+				vcom.push(vendas2);
+				alert("Cadastro realizado com sucesso!");
+			}else{
+			alert("Preencha os campos do cadastro!")
+			}
+		}
+
+		function relatorio(){
+			var relatorio = "";
+			if (nome.lenght != 0) {
+				for (var i = 0; i < nome.length; i++) {
+				relatorio += "Nome do vendedor: " + nome[i] + "</br>Vendas: "+ vet[i] + "</br>Comissão:" + com[i] + "%</br>" + " Total(vendas + comissão): " + vcom[i] + "</br></br>";
+				}
+			} else {
+				relatorio = "Não existe vendedor cadastrado!"
+			}
+			document.getElementById("resultado").innerHTML = relatorio;
+		}
+		
+		function total(){
+			var total = 0;
+			for (i = 0; i< nome.length; i++) {
+				total = total + vet[i];
+			}
+			document.getElementById("total").innerHTML = "Soma de todas as vendas de todos os vendedores: " + total;
+		}
+
+		function ex6(){
+			var vendass = "";
+			var maior = 0;
+			var menor = 0;
+			maior = vcom[0];
+			menor = vcom[0];
+			for (i = 0; i < nome.length; i++) {
+				if (vcom[i] > maior){
+					maior = vcom[i];
+				}
+				if (vcom[i] < menor) {
+					menor = vcom[i];
+				}
+			}	
+			vendass += "Melhor vendedor: " + nome[vcom.indexOf(maior)] + "</br>Valor: " + maior + "</br></br>";
+			vendass += "Vendedor com menor valor a receber: " + nome[vcom.indexOf(menor)] + "</br>Valor:" + menor;
+			document.getElementById("maiormenor").innerHTML = vendass;
+		}	
+	</script>
+</head>
+<body>
+	<input type="text" id="vendedor" placeholder="Nome do vendedor">
+	<input type="number" id="vendas" placeholder="Vendas">
+	<input type="number" id="comissao" placeholder="Comissao">
+	<button onclick="cadastro()">Cadastrar</button>
+	<button onclick="relatorio()">Relatório</button>
+	<button onclick="total()">Total</button>
+	<button onclick="ex6()">Classificação</button>
+	<p id="resultado"></p>
+	<p id="total"></p>
+	<p id="maiormenor"></p>
+</body>
+</html>

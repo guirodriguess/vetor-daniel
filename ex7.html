@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<h1> Exercício 7 </h1>
+	<script type="text/javascript">
+		vetor = [];
+		function ex7(){
+			var num = parseFloat(document.getElementById("numero").value);
+			vetor.push(num);
+			alert("Número inserido com sucesso!");
+		}
+
+		function calcular(){
+			for(var i = 0; i < vetor.length; i++){
+				if (vetor[i] < 0){
+					var cont = 0;
+					cont++;
+				} else {
+					var soma = 0;
+					soma = soma + vetor[i];
+				}
+			}
+			document.getElementById("resultado").innerHTML = "Números negativos: " + cont + "</br>Soma dos números positivos: " + soma;
+		}
+	</script>
+</head>
+<body>
+	<input type="number" id="numero">
+	<button onclick="ex7()">Inserir</button>
+	<button onclick="calcular()">Calcular</button>
+	<p id="resultado"></p>
+</body>
+</html>
